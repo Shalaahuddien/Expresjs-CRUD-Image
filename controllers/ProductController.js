@@ -115,6 +115,7 @@ export const deleteProduct = async(req, res)=>{
     if(!product) return res.status(404).json({msg: "No Data Found"});
 
     try {
+        // ambil gambar spesifik
         const filepath = `./public/images/${product.image}`;
         fs.unlinkSync(filepath);
         await Product.destroy({
