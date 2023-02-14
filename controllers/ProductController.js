@@ -13,6 +13,7 @@ export const getProduct = async(req, res)=>{
     }
 }
 
+// menampilkan semua product by id
 export const getProductById = async(req, res)=>{
     await Product.findOne({
         where:{
