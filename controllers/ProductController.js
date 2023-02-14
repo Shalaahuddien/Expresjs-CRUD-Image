@@ -37,6 +37,7 @@ export const saveProduct = (req, res)=>{
     const fileSize = file.data.length;
     // ekstensi file
     const ext = path.extname(file.name);
+    // file yang sudah terenskripsi + ekstensi
     const fileName = file.md5 + ext;
     const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
     const allowedType = ['.png','.jpg','.jpeg'];
