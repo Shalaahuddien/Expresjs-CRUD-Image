@@ -39,8 +39,9 @@ export const saveProduct = (req, res)=>{
     const ext = path.extname(file.name);
     // file yang sudah terenskripsi + ekstensi
     const fileName = file.md5 + ext;
-     // url untuk ke DB
+    // url untuk ke DB
     const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
+    // ekstensi yang diizinakan
     const allowedType = ['.png','.jpg','.jpeg'];
 
     if(!allowedType.includes(ext.toLowerCase())) return res.status(422).json({msg: "Invalid Images"});
