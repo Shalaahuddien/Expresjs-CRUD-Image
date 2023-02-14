@@ -45,6 +45,7 @@ export const saveProduct = (req, res)=>{
     const allowedType = ['.png','.jpg','.jpeg'];
     // cek apakah ekstensi jpg jpeg atau png
     if(!allowedType.includes(ext.toLowerCase())) return res.status(422).json({msg: "Invalid Images"});
+    // cek apakah ukuran image tidak lebih dari 5 MB
     if(fileSize > 5000000) return res.status(422).json({msg: "Image must be less than 5 MB"});
 
     file.mv(`./public/images/${fileName}`, async(err)=>{
