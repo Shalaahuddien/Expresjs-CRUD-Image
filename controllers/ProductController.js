@@ -3,6 +3,7 @@ import Product from "../models/ProductModel.js";
 import path from "path";
 import fs from "fs";
 
+// menampilkan semua product
 export const getProduct = async(req, res)=>{
     try{
         const response = await Product.findAll();
