@@ -39,6 +39,7 @@ export const saveProduct = (req, res)=>{
     const ext = path.extname(file.name);
     // file yang sudah terenskripsi + ekstensi
     const fileName = file.md5 + ext;
+     // url untuk ke DB
     const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
     const allowedType = ['.png','.jpg','.jpeg'];
 
