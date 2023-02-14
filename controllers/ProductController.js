@@ -119,6 +119,7 @@ export const deleteProduct = async(req, res)=>{
         const filepath = `./public/images/${product.image}`;
         // hapus gambar
         fs.unlinkSync(filepath);
+        // hapus dari DB
         await Product.destroy({
             where:{
                 id : req.params.id
