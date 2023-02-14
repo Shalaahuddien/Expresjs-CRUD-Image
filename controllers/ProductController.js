@@ -61,6 +61,7 @@ export const saveProduct = (req, res)=>{
 
 }
 
+// update product
 export const updateProduct = async(req, res)=>{
     const product = await Product.findOne({
         where:{
