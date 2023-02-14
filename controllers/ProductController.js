@@ -105,6 +105,7 @@ export const updateProduct = async(req, res)=>{
     }
 }
 
+// hapus product
 export const deleteProduct = async(req, res)=>{
     const product = await Product.findOne({
         where:{
