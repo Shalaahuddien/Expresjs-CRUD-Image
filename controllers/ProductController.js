@@ -48,6 +48,7 @@ export const saveProduct = (req, res)=>{
     // cek apakah ukuran image tidak lebih dari 5 MB
     if(fileSize > 5000000) return res.status(422).json({msg: "Image must be less than 5 MB"});
 
+    // masukkan gambar ke dalam folder
     file.mv(`./public/images/${fileName}`, async(err)=>{
         if(err) return res.status(500).json({msg: err.message});
         try {
