@@ -32,7 +32,10 @@ export const saveProduct = (req, res)=>{
     if(!req.files === null) return res.status(400).json({msg: "No File Uploaded"});
     const name = req.body.title;
     const file = req.files.file;
+
+    // ukuran file
     const fileSize = file.data.length;
+    
     const ext = path.extname(file.name);
     const fileName = file.md5 + ext;
     const url = `${req.protocol}://${req.get("host")}/images/${fileName}`;
