@@ -26,6 +26,8 @@ export const getProductById = async(req, res)=>{
     })
 }
 
+
+// menyimpan product kedatabase
 export const saveProduct = (req, res)=>{
     if(!req.files === null) return res.status(400).json({msg: "No File Uploaded"});
     const name = req.body.title;
